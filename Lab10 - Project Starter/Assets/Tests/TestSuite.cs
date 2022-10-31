@@ -8,21 +8,79 @@ namespace Tests
 {
     public class TestSuite
     {
-
         private float result = 0.0f;
         
-        // A Test behaves as an ordinary method
+
         [Test]
         public void TestAddition()
         {
             // Use the Assert class to test conditions
 
-            result = Calculator.CalculatePair(5, 2, "+");
+            result = Calculator.CalculatePair(5 , 2 , "+");
             Assert.AreEqual(result, 7);
         }
+            
+        [Test]
+        public void TestSubtraction()
+        {
+            // Use the Assert class to test conditions
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
+            result = Calculator.CalculatePair(5, 2, "-");
+            Assert.AreEqual(result, 3);
+        }
+
+        [Test]
+        public void TestMultiplication()
+        {
+            // Use the Assert class to test conditions
+
+            result = Calculator.CalculatePair(5, 2, "*");
+            Assert.AreEqual(result, 10);
+        }
+
+        [Test]
+        public void TestDivision()
+        {
+            // Use the Assert class to test conditions
+
+            result = Calculator.CalculatePair(5, 2, "/");
+            Assert.AreEqual(result, 2.5f);
+        }
+
+        [Test]
+        public void TestSquareRoot()
+        {
+            // Use the Assert class to test conditions
+
+            result = Mathf.Sqrt(100);
+            Assert.AreEqual(result, 10);
+        }
+
+        [Test]
+        public void TestPower()
+        {
+            // Use the Assert class to test conditions
+
+            result = Mathf.Pow(10, 2);
+            Assert.AreEqual(result, 100);
+        }
+
+
+        [Test]
+        public void TestSuiteSimplePasses()
+        {
+            // Use the Assert class to test conditions
+        }
+
+       
+        [UnityTest]
+        public IEnumerator TestSuiteWithEnumeratorPasses()
+        {
+            // Use the Assert class to test conditions.
+            // Use yield to skip a frame.   
+            yield return null;
+        }
+
         [UnityTest]
         public IEnumerator TestUnityAddition()
         {

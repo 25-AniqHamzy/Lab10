@@ -38,7 +38,9 @@ public class Calculator : MonoBehaviour {
 				case "-":
 				case "/":
 				case "*":
-				case "=":
+                case "√":
+                case "^":
+                case "=":
 				Calculate(s);
 				break;
 			case "ce":
@@ -62,10 +64,21 @@ public class Calculator : MonoBehaviour {
 		if (_result.text == "" && s != "=") {
 			_x = Convert.ToSingle(_input.text);
 			_op = s;
-			_result.text = _input.text + " " + s;
-			_input.text = "0";
-			return;
-		}
+			
+            switch (s)
+            {
+                case "√":
+                    _result.text =  " " + s;
+                    break;
+                default:
+                    _result.text = _input.text + " " + s;
+                    break;
+            }
+            _input.text = "0";
+            return;
+
+
+        }
 
 		//Handles division by 0
 		if(_op == "/" && _input.text == "0"){
@@ -104,8 +117,14 @@ public class Calculator : MonoBehaviour {
 				break;
 			case "/":
 				result = x / y;
-				break;
-		}
+                break;
+            case "√":
+                result = Mathf.Sqrt(y);
+                break;
+            case "^":
+                result = Mathf.Pow(x , y);
+                break;
+        }
 
 		return result;
 	}
