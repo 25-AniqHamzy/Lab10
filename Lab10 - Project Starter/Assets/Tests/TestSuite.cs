@@ -91,5 +91,60 @@ namespace Tests
             result = Calculator.CalculatePair(5, 2, "+");
             Assert.AreEqual(result, 7);
         }
+
+        [UnityTest]
+        public IEnumerator TestUnitySubtraction()
+        {
+            // Use the Assert class to test conditions.
+            // Use yield to skip a frame.
+            yield return null;
+
+            result = Calculator.CalculatePair(5, 2, "-");
+            Assert.AreEqual(result, 3);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnityMultiplication()
+        {
+            // Use the Assert class to test conditions.
+            // Use yield to skip a frame.
+            yield return null;
+
+            result = Calculator.CalculatePair(5, 2, "*");
+            Assert.AreEqual(result, 10);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnityDivision()
+        {
+            // Use the Assert class to test conditions.
+            // Use yield to skip a frame.
+            yield return null;
+
+            result = Calculator.CalculatePair(5, 2, "/");
+            Assert.AreEqual(result, 2.5f);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnitySquareRoot()
+        {
+            // Use the Assert class to test conditions.
+            // Use yield to skip a frame.
+            yield return null;
+
+            result = Mathf.Sqrt(100);
+            Assert.AreEqual(result, 10);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnityPower()
+        {
+            // Use the Assert class to test conditions.
+            // Use yield to skip a frame.
+            yield return null;
+
+            result = Mathf.Pow(10, 2);
+            Assert.AreEqual(result, 100);
+        }
     }
 }
